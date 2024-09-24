@@ -24,7 +24,12 @@ public class Gaulois {
 
 	public void frapper(Romain romain) {
 		System.out.println(nom + " envoie un grand coup dans la mâchoire de " + romain.getNom());
-		romain.recevoirCoup(force / 3);
+		romain.recevoirCoup(force / 3 * 10);
+	}
+
+	public void boirePotion(int forcePotion) {
+		this.effetPotion = forcePotion;
+		parler(" Merci Druide, je sens que ma force est " + forcePotion + " fois décuplée");
 	}
 
 	@Override
@@ -41,5 +46,6 @@ public class Gaulois {
 		Alexendre.parler("okay");
 
 		Ludovix.frapper(Alexendre);
+		Ludovix.boirePotion(10);
 	}
 }
